@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Про нас — EfiPhone</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="animation.css">
+<style>
+  body{font-family:'Unbounded',sans-serif;margin:0;background-color:#f5f5f5;display:flex;flex-direction:column;min-height:100vh}
+  .site-header{background-color:#fff;border-bottom:2px solid #d2dbd2;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:100}
+  .logo{font-size:22px;font-weight:700;letter-spacing:2px;color:#111}
+  .logo span{color:#0a7a48}
+  .site-header nav{display:flex;gap:4px}
+  .site-header nav a{padding:8px 14px;border-radius:8px;font-size:12px;font-weight:500;color:#546254;text-decoration:none}
+  .site-header nav a:hover{background-color:#f0f3f0;color:#111}
+  .site-header nav a.active{background-color:rgba(10,122,72,.1);color:#0a7a48;font-weight:700}
+  .cart-btn{display:flex;align-items:center;gap:8px;background-color:#0a7a48;color:#fff;font-size:12px;font-weight:700;padding:9px 18px;border-radius:50px;text-decoration:none;font-family:'Unbounded',sans-serif}
+  .cart-btn:hover{background-color:#076038}
+  .badge{background:#fff;color:#0a7a48;font-size:11px;font-weight:800;min-width:20px;height:20px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center}
+  main{flex:1;padding-top:80px}
+  .content{background-color:#fffde7;padding:32px 40px}
+  .page-grid{display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:start}
+  .section{margin-bottom:28px}
+  .section-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#546254;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid #d2dbd2}
+  .info-table{width:100%;border-collapse:collapse;font-size:12px}
+  .info-table th{text-align:left;padding:9px 12px;background:#fff;font-weight:700;color:#111;border:1px solid #d2dbd2;width:40%}
+  .info-table td{padding:9px 12px;border:1px solid #d2dbd2;color:#333;background:#fafafa}
+  .info-table tr:first-child th,.info-table tr:first-child td{border-top:2px solid #0a7a48}
+  .process{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:4px}
+  .proc-step{display:flex;flex-direction:column;align-items:center;position:relative}
+  .proc-step:not(:last-child)::after{content:'';position:absolute;top:18px;left:50%;width:100%;height:2px;background:#d2dbd2;z-index:0}
+  .proc-num{width:36px;height:36px;border-radius:50%;background:#0a7a48;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+  .proc-label{font-size:10px;color:#546254;margin-top:8px;text-align:center;line-height:1.5}
+  .map-block{position:sticky;top:88px}
+  .map-wrap{border-radius:12px;overflow:hidden;border:1.5px solid #d2dbd2;height:280px}
+  .map-wrap iframe{width:100%;height:100%;border:0;display:block}
+  .map-info{background:#fff;border:1.5px solid #d2dbd2;border-radius:12px;padding:16px;margin-top:12px;font-size:12px}
+  .map-info p{margin:6px 0;color:#333}
+  .map-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#546254;margin-bottom:8px;display:block}
+  .footer{background-color:#222;color:white;text-align:center;padding:16px;font-size:13px;margin-top:auto}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">EFI<span>PHONE</span></div>
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="catalog.php">Каталог</a>
+    <a href="about.html" class="active">Про нас</a>
+    <a href="guarantee.html">Гарантія</a>
+    <a href="contact.php">Контакти</a>
+  </nav>
+  <a href="cart.php" class="cart-btn">&#128722; Кошик <span class="badge" id="cart-count">0</span></a>
+</header>
+
+<main>
+<div class="content">
+
+  <h2 style="color:#0a7a48;margin:0 0 24px;">Про нас</h2>
+
+  <div class="page-grid">
+
+    <!-- Ліва колонка -->
+    <div>
+
+      <div class="section">
+        <p class="section-title">Загальна інформація</p>
+        <table class="info-table">
+          <tr><th>Повна назва фірми</th><td>ТОВ "FastHolding"</td></tr>
+          <tr><th>Рік заснування компанії</th><td>2026</td></tr>
+          <tr><th>Місто головного офісу</th><td>Кременчук, Полтавська обл.</td></tr>
+          <tr><th>Спеціалізація</th><td>Перевірені б/у смартфони</td></tr>
+          <tr><th>Гарантія</th><td>180 днів на кожен пристрій</td></tr>
+          <tr><th>Процес діагностики смартфонів</th><td>40-пунктна перевірка перед продажем</td></tr>
+        </table>
+      </div>
+
+      
+
+      <div class="section">
+        <p class="section-title">Процес перевірки кожного пристрою</p>
+        <div class="process">
+          <div class="proc-step">
+            <div class="proc-num">1</div>
+            <div class="proc-label">Зовнішній огляд</div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">2</div>
+            <div class="proc-label">Перевірка екрану</div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">3</div>
+            <div class="proc-label">Діагностика АКБ</div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">4</div>
+            <div class="proc-label">Тест камер та звуку</div>
+          </div>
+          <div class="proc-step">
+            <div class="proc-num">5</div>
+            <div class="proc-label">Перевірка Face / Touch ID</div>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+
+    <!-- Права колонка — карта -->
+    <div class="map-block">
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=вул.+Вадима+Пугачова+14,+Кременчук&output=embed&z=16"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="map-info">
+        <span class="map-label">Адреса магазину</span>
+        <p><strong>м. Кременчук:</strong> Вул. Вадима Пугачова 14-Д</p>
+        <p style="margin-top:8px"><strong>Пн–Пт:</strong> 10:00 – 20:00</p>
+        <p><strong>Сб–Нд:</strong> Офіційні вихідні</p>
+        <p style="margin-top:8px"><strong>Тел:</strong> +38 (096) 123-45-67</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</main>
+
+<div class="footer">&#169; 2026 EfiPhone.com . Усі права захищено</div>
+
+<script>
+var cart=JSON.parse(localStorage.getItem('cart')||'[]'),t=0;
+for(var i=0;i<cart.length;i++) t+=cart[i].qty;
+document.getElementById('cart-count').textContent=t;
+document.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var h=this.getAttribute('href');
+    if(h&&h!=='#'&&!h.startsWith('javascript')){
+      e.preventDefault();document.body.classList.add('fade-out');
+      setTimeout(function(){window.location.href=h;},220);
+    }
+  });
+});
+</script>
+</body>
+</html>

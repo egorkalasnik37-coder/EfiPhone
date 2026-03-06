@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Головна Сторінка</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ПРАВКА 3: flex-колонка, footer завжди внизу */
+  body {
+    font-family: 'Unbounded', sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* ПРАВКА 2: фіксована шапка з горизонтальною навігацією */
+  .site-header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #d2dbd2;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+  }
+
+  /* ПРАВКА 1: логотип і акцентний колір оновлено до #0a7a48 */
+  .logo { font-size: 22px; font-weight: 700; letter-spacing: 2px; color: #111; }
+  .logo span { color: #0a7a48; }
+
+  .site-header nav { display: flex; gap: 4px; }
+  .site-header nav a {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #546254;
+    text-decoration: none;
+  }
+  .site-header nav a:hover { background-color: #f0f3f0; color: #111; }
+  .site-header nav a.active { background-color: rgba(10,122,72,.1); color: #0a7a48; font-weight: 700; }
+
+  .cart-btn {
+    display: flex; align-items: center; gap: 8px;
+    background-color: #0a7a48; color: #fff;
+    font-size: 12px; font-weight: 700;
+    padding: 9px 18px; border-radius: 50px;
+    text-decoration: none; font-family: 'Unbounded', sans-serif;
+  }
+  .cart-btn:hover { background-color: #076038; }
+  .badge {
+    background: #fff; color: #0a7a48;
+    font-size: 11px; font-weight: 800;
+    min-width: 20px; height: 20px; border-radius: 10px;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+
+  /* Відступ під шапку */
+  main { flex: 1; padding-top: 80px; }
+
+  .content { background-color: #fffde7; padding: 30px 40px; }
+
+  /* ПРАВКА 1: оновлена кнопка */
+  .btn {
+    padding: 12px 30px;
+    background-color: #0a7a48; color: white;
+    border: none; border-radius: 50px; font-size: 14px;
+    cursor: pointer; font-family: 'Unbounded', sans-serif;
+    text-decoration: none; display: inline-block;
+  }
+  .btn:hover { background-color: #076038; }
+
+  .cat-img { width: 120px; height: 120px; border-radius: 20px; }
+
+  /* ПРАВКА 3: footer завжди внизу */
+  .footer {
+    background-color: #222; color: white;
+    text-align: center; padding: 16px;
+    font-size: 13px; margin-top: auto;
+  }
+</style>
+<link rel="stylesheet" href="animation.css">
+</head>
+<body>
+
+<!-- ПРАВКА 2: шапка з горизонтальною навігацією -->
+<header class="site-header">
+  <div class="logo">EFI<span>PHONE</span></div>
+  <nav>
+    <a href="index.html"     class="active">Головна</a>
+    <a href="catalog.php">Каталог</a>
+    <a href="about.html">Про нас</a>
+    <a href="guarantee.html">Гарантія</a>
+    <a href="contact.php">Контакти</a>
+  </nav>
+  <a href="cart.php" class="cart-btn">🛒 Кошик <span class="badge" id="cart-count">0</span></a>
+</header>
+
+<main>
+<div class="content">
+
+  <h2 style="text-align:center; color:#0a7a48; margin-bottom:24px;">Категорії товарів</h2>
+
+  <table width="100%" border="0">
+  <tr>
+    <td width="25%" align="center" style="padding: 15px;">
+      <img src="img/apple.webp" class="cat-img"><br>
+      <h3 style="margin:10px 0 4px;">Apple</h3>
+      <p style="color:#777; font-size:13px;"><strong>iPhone: </strong> Від "Mini" до "Pro Max"</p>
+    </td>
+    <td width="25%" align="center" style="padding: 15px;">
+      <img src="img/google.png" class="cat-img"><br>
+      <h3 style="margin:10px 0 4px;">Google</h3>
+      <p style="color:#777; font-size:13px;"><strong>Pixel: </strong> A-cерія та флагмани "Pro XL"</p>
+    </td>
+    <td width="25%" align="center" style="padding: 15px;">
+      <img src="img/xiaomi.png" class="cat-img"><br>
+      <h3 style="margin:10px 0 4px;">Xiaomi</h3>
+      <p style="color:#777; font-size:13px;"><strong>Xiaomi: </strong> Базова та "Ultra" серія</p>
+    </td>
+  </tr>
+  </table>
+
+  <br>
+  <table width="100%"><tr><td align="center">
+    <a href="catalog.php" class="btn">Переглянути каталог</a>
+  </td></tr></table>
+
+  <table width="100%" bgcolor="#f9f9f9" border="0" style="margin-top: 40px; border-radius:12px; overflow:hidden;">
+  <tr>
+    <td colspan="3" align="center" style="padding:20px 0 8px;">
+      <h2 style="color:#0a7a48;">Чому обирають нас?</h2>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center" style="padding: 20px;">
+      <div style="font-size:36px;">🛠️</div>
+      <h3 style="margin:8px 0 4px; font-size:14px;">Перевірка кожної деталі</h3>
+      <p style="color:#777; font-size:12px;">Кожен телефон проходить діагностику</p>
+    </td>
+    <td width="33%" align="center" style="padding: 20px;">
+      <div style="font-size:36px;">🔋</div>
+      <h3 style="margin:8px 0 4px; font-size:14px;">АКБ від 90%</h3>
+      <p style="color:#777; font-size:12px;">Перевіряємо акумулятор перед продажем</p>
+    </td>
+    <td width="33%" align="center" style="padding: 20px;">
+      <div style="font-size:36px;">🚚</div>
+      <h3 style="margin:8px 0 4px; font-size:14px;">Повернення 14 днів</h3>
+      <p style="color:#777; font-size:12px;">Без зайвих питань</p>
+    </td>
+  </tr>
+  </table>
+
+</div>
+</main>
+
+<div class="footer">© 2026 EfiPhone.com . Усі права захищено</div>
+
+<script>
+var cart = JSON.parse(localStorage.getItem('cart') || '[]');
+var t = 0; for (var i = 0; i < cart.length; i++) t += cart[i].qty;
+document.getElementById('cart-count').textContent = t;
+</script>
+
+</body>
+</html>

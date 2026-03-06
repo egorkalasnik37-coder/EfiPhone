@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Гарантія</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Unbounded', sans-serif; margin: 0; background-color: #f5f5f5; display: flex; flex-direction: column; min-height: 100vh; }
+  .site-header { background-color: #fff; border-bottom: 2px solid #d2dbd2; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+  .logo { font-size: 22px; font-weight: 700; letter-spacing: 2px; color: #111; }
+  .logo span { color: #0a7a48; }
+  .site-header nav { display: flex; gap: 4px; }
+  .site-header nav a { padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 500; color: #546254; text-decoration: none; }
+  .site-header nav a:hover { background-color: #f0f3f0; color: #111; }
+  .site-header nav a.active { background-color: rgba(10,122,72,.1); color: #0a7a48; font-weight: 700; }
+  .cart-btn { display: flex; align-items: center; gap: 8px; background-color: #0a7a48; color: #fff; font-size: 12px; font-weight: 700; padding: 9px 18px; border-radius: 50px; text-decoration: none; font-family: 'Unbounded', sans-serif; }
+  .cart-btn:hover { background-color: #076038; }
+  .badge { background: #fff; color: #0a7a48; font-size: 11px; font-weight: 800; min-width: 20px; height: 20px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; }
+  main { flex: 1; padding-top: 80px; }
+  .content { background-color: #fffde7; padding: 30px 40px; }
+
+  /* Таблиця умов гарантії */
+  .conditions { border-collapse: collapse; width: 100%; margin-top: 20px; }
+  .conditions th { background-color: #0a7a48; color: white; padding: 12px; text-align: left; font-size: 13px; }
+  .conditions td { padding: 12px; border-bottom: 1px solid #ddd; font-size: 13px; color: #555; }
+  /* ПРАВКА 5: рядок .conditions tr:hover td ВИДАЛЕНО - не змінювати колір при наведенні */
+
+  /* Значки стану - ПРАВКА 5: без :hover */
+  .grade-ap { background:#d4edda; color:#155724; padding:3px 10px; border-radius:20px; font-size:12px; display:inline-block; }
+  .grade-a  { background:#cce5ff; color:#004085; padding:3px 10px; border-radius:20px; font-size:12px; display:inline-block; }
+  .grade-b  { background:#fff3cd; color:#856404; padding:3px 10px; border-radius:20px; font-size:12px; display:inline-block; }
+
+  .footer { background-color: #222; color: white; text-align: center; padding: 16px; font-size: 13px; margin-top: auto; }
+</style>
+<link rel="stylesheet" href="animation.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">EFI<span>PHONE</span></div>
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="catalog.php">Каталог</a>
+    <a href="about.html">Про нас</a>
+    <a href="guarantee.html" class="active">Гарантія</a>
+    <a href="contact.php">Контакти</a>
+  </nav>
+  <a href="cart.php" class="cart-btn">🛒 Кошик <span class="badge" id="cart-count">0</span></a>
+</header>
+
+<main>
+<div class="content">
+  <h2 style="color:#0a7a48;">Гарантія та повернення</h2>
+
+  <table class="conditions">
+  <tr>
+    <th>Стан</th>
+    <th>Гарантія</th>
+    <th>Повернення</th>
+  </tr>
+  <tr>
+    <td><span class="grade-ap">A+</span> - Як новий</td>
+    <td>12 місяців</td>
+    <td>14 днів</td>
+  </tr>
+  <tr>
+    <td><span class="grade-a">A</span> - Відмінний стан</td>
+    <td>12 місяців</td>
+    <td>14 днів</td>
+  </tr>
+  <tr>
+    <td><span class="grade-b">B</span> - Хороший стан</td>
+    <td>6 місяців</td>
+    <td>14 днів</td>
+  </tr>
+  </table>
+
+  <h3 style="color:#0a7a48; margin-top:30px;">Що означають стани?</h3>
+
+  <table width="100%" border="0">
+  <tr>
+    <td width="33%" valign="top" style="padding:15px; background:#d4edda; border-radius:10px;">
+      <span class="grade-ap">A+</span>
+      <h4 style="margin:8px 0 4px; font-size:13px;">Як новий</h4>
+      <p style="font-size:12px; color:#555;">Жодних слідів використання. АКБ 95%+. Виглядає як щойно з магазину.</p>
+    </td>
+    <td width="4%"></td>
+    <td width="33%" valign="top" style="padding:15px; background:#cce5ff; border-radius:10px;">
+      <span class="grade-a">A</span>
+      <h4 style="margin:8px 0 4px; font-size:13px;">Відмінний стан</h4>
+      <p style="font-size:12px; color:#555;">Мінімальні сліди використання. АКБ від 90%. Дрібні подряпини помітні лише впритул.</p>
+    </td>
+    <td width="4%"></td>
+    <td width="33%" valign="top" style="padding:15px; background:#fff3cd; border-radius:10px;">
+      <span class="grade-b">B</span>
+      <h4 style="margin:8px 0 4px; font-size:13px;">Хороший стан</h4>
+      <p style="font-size:12px; color:#555;">Видимі подряпини на корпусі. АКБ від 85%. Екран без тріщин. Все працює.</p>
+    </td>
+  </tr>
+  </table>
+
+  <h3 style="color:#0a7a48; margin-top:30px;">Часті питання</h3>
+
+  <p style="margin-bottom:12px;"><strong>Чи можна повернути телефон?</strong><br>
+  <span style="color:#555; font-size:13px;">Так, впродовж 14 днів. Телефон має бути без механічних пошкоджень.</span></p>
+
+  <p style="margin-bottom:12px;"><strong>Що робити якщо щось зламалось?</strong><br>
+  <span style="color:#555; font-size:13px;">Зателефонуйте нам - безкоштовно відремонтуємо або замінимо у межах гарантії.</span></p>
+
+  <p style="margin-bottom:12px;"><strong>Телефони розблоковані?</strong><br>
+  <span style="color:#555; font-size:13px;">Так, всі пристрої повністю розблоковані. Перевіряємо IMEI перед продажем.</span></p>
+
+  <p><strong>Чи є гарантійний талон?</strong><br>
+  <span style="color:#555; font-size:13px;">Так, до кожного пристрою - талон з датою продажу та IMEI.</span></p>
+</div>
+</main>
+
+<div class="footer">© 2026 EfiPhone.com . Усі права захищено</div>
+
+<script>
+var cart = JSON.parse(localStorage.getItem('cart') || '[]');
+var t = 0; for (var i = 0; i < cart.length; i++) t += cart[i].qty;
+document.getElementById('cart-count').textContent = t;
+</script>
+</body>
+</html>
