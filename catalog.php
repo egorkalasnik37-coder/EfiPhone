@@ -167,16 +167,16 @@ $phones_json = json_encode(array_values($phones));
 
   <div class="filter-bar">
     <span class="filter-lbl">Бренд:</span>
-    <button class="fbtn active" onclick="setFilter('brand','all',this)">Всі</button>
+    <button class="fbtn active" data-ftype="brand" data-fval="all">Всі</button>
     <?php foreach (array_keys($brands) as $b): ?>
-    <button class="fbtn" onclick="setFilter('brand',<?= json_encode($b) ?>,this)"><?= htmlspecialchars($b) ?></button>
+    <button class="fbtn" data-ftype="brand" data-fval="<?= htmlspecialchars($b) ?>"><?= htmlspecialchars($b) ?></button>
     <?php endforeach; ?>
     <div class="filter-sep"></div>
     <span class="filter-lbl">Стан:</span>
-    <button class="fbtn active" onclick="setFilter('grade','all',this)">Всі</button>
-    <button class="fbtn" onclick="setFilter('grade','A+',this)">A+</button>
-    <button class="fbtn" onclick="setFilter('grade','A',this)">A</button>
-    <button class="fbtn" onclick="setFilter('grade','B',this)">B</button>
+    <button class="fbtn active" data-ftype="grade" data-fval="all">Всі</button>
+    <button class="fbtn" data-ftype="grade" data-fval="A+">A+</button>
+    <button class="fbtn" data-ftype="grade" data-fval="A">A</button>
+    <button class="fbtn" data-ftype="grade" data-fval="B">B</button>
   </div>
 
   <?php
@@ -264,7 +264,7 @@ var activeBrand = 'all';
 var activeGrade = 'all';
 
 function setFilter(type, val, btn) {
-  var group = btn.parentElement.querySelectorAll('.fbtn');
+  var group = document.querySelectorAll('.fbtn[data-ftype="' + type + '"]');
   for (var i = 0; i < group.length; i++) group[i].classList.remove('active');
   btn.classList.add('active');
   if (type === 'brand') activeBrand = val;
@@ -350,6 +350,13 @@ function fmt(n) {
 
 // ── Event delegation — один слухач для всіх кліків ──
 document.addEventListener('click', function(e) {
+  // 0. Кнопка фільтру
+  var fbtn = e.target.closest('.fbtn');
+  if (fbtn) {
+    var ftype = fbtn.getAttribute('data-ftype');
+    var fval  = fbtn.getAttribute('data-fval');
+    if (ftype) { setFilter(ftype, fval, fbtn); return; }
+  }
   // 1. Кнопка "До кошика" на картці
   if (e.target.classList.contains('card-btn')) {
     e.stopPropagation();
